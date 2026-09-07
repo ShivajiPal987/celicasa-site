@@ -1398,11 +1398,7 @@ footer {
   </div>
   <div class="contact-form-wrap">
     <div class="form-title">Send us a note</div>
-    <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-      <input type="hidden" name="form-name" value="contact"/>
-      <p hidden>
-        <label>Do not fill this out: <input name="bot-field"/></label>
-      </p>
+    <form name="contact" method="POST" action="https://formspree.io/f/xeaqrqda">
       <div class="field-row">
         <div class="field">
           <label for="first-name">First name</label>
@@ -1496,9 +1492,12 @@ document.querySelector('form[name="contact"]').addEventListener('submit', async 
   status.textContent = '';
 
   try {
-    const response = await fetch(window.location.pathname, {
+    const response = await fetch(form.action, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/x-www-form-urlencoded'
+      },
       body: new URLSearchParams(new FormData(form)).toString()
     });
     if (!response.ok) throw new Error('Submission failed');
