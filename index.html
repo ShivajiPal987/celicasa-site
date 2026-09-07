@@ -1,0 +1,1719 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>CeliCasa — Gluten-Free Cafe, Greater Noida</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@0,400;0,500;0,600;0,700;1,500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --ink:    #171719;
+  --stone:  #665F59;
+  --oat:    #F1E9D8;
+  --bark:   #24211F;
+  --sage:   #B9F23A;
+  --sage-pale: #DFFF9A;
+  --warm-white: #FFF9F0;
+  --coral: #FF765D;
+  --lavender: #E6D8FF;
+  --rule: rgba(23,23,25,0.15);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', system-ui, sans-serif;
+  background: var(--warm-white);
+  color: var(--ink);
+  font-size: 16px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* ─── NAV ─── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5vw;
+  height: 110px;
+  border-bottom: 2px solid var(--ink);
+  background: #F5EAD2;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 0 rgba(23,23,25,0.08);
+}
+
+.brand-logo {
+  display: block;
+  width: 220px;
+  height: 100px;
+  object-fit: contain;
+  object-position: center;
+}
+
+.footer-logo {
+  display: block;
+  width: 180px;
+  height: 54px;
+  object-fit: contain;
+  object-position: center;
+}
+
+.logo-svg text { font-family: 'Lora', Georgia, serif; }
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 2.4rem;
+}
+
+.nav-right a {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--stone);
+  text-decoration: none;
+  letter-spacing: 0.01em;
+  transition: color 0.15s, transform 0.15s;
+}
+.nav-right a:hover { color: var(--ink); transform: translateY(-2px); }
+
+.nav-book {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--warm-white) !important;
+  background: var(--ink);
+  padding: 8px 18px;
+  border-radius: 999px;
+  border: 2px solid var(--ink);
+  transition: background 0.15s, color 0.15s, transform 0.15s !important;
+}
+.nav-book:hover { background: var(--sage) !important; color: var(--ink) !important; transform: rotate(-2deg) scale(1.04); }
+
+/* ─── HERO ─── */
+.hero {
+  min-height: 100svh;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  padding: 0;
+  background: var(--warm-white);
+  position: relative;
+  overflow: hidden;
+  padding-top: 110px;
+}
+
+.hero-main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: calc(100svh - 110px);
+}
+
+.hero-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 6vh 5vw 8vh;
+  border-right: 2px solid var(--ink);
+  position: relative;
+}
+
+.hero-kicker {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.hero-kicker::before {
+  content: '';
+  display: block;
+  width: 28px;
+  height: 1px;
+  background: var(--coral);
+  height: 6px;
+  border-radius: 99px;
+}
+
+.hero-headline {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(3.6rem, 6.5vw, 6rem);
+  font-weight: 500;
+  line-height: 1.03;
+  color: var(--ink);
+  margin-bottom: 2.5rem;
+  letter-spacing: 0;
+  font-weight: 700;
+}
+.hero-headline br:first-of-type { display: none; }
+.hero-headline::after { content: ' ✦'; color: var(--coral); }
+
+.hero-body {
+  font-size: 15px;
+  color: var(--stone);
+  max-width: 360px;
+  line-height: 1.75;
+  margin-bottom: 3rem;
+  font-weight: 300;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.btn-dark {
+  background: var(--ink);
+  color: var(--oat);
+  padding: 12px 24px;
+  font-size: 13px;
+  font-weight: 500;
+  border: none;
+  border-radius: 999px;
+  border: 2px solid var(--ink);
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: background 0.15s, color 0.15s, transform 0.15s;
+  letter-spacing: 0.01em;
+}
+.btn-dark:hover { background: var(--sage); color: var(--ink); transform: translateY(-3px) rotate(-1deg); }
+
+.btn-ghost {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--stone);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.15s;
+}
+.btn-ghost:hover { color: var(--ink); }
+.btn-ghost::after { content: '→'; }
+.btn-ghost { font-weight: 600; }
+
+.hero-right {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-photo-block {
+  flex: 1;
+  background: var(--bark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Illustrated food art — SVG */
+.food-illustration {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-right-footer {
+  background: var(--ink);
+  color: var(--sage);
+  padding: 1.4rem 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+  border-top: 2px solid var(--ink);
+}
+
+.hero-stat {
+  text-align: center;
+}
+
+.hero-stat-n {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.9rem;
+  font-weight: 500;
+  line-height: 1;
+  color: var(--sage);
+  display: block;
+}
+
+.hero-stat-l {
+  font-size: 12px;
+  color: rgba(255,249,240,0.8);
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  margin-top: 3px;
+  display: block;
+}
+
+/* ─── STRIP ─── */
+.strip {
+  background: var(--ink);
+  color: var(--oat);
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 14px 0;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+.strip-inner {
+  display: inline-flex;
+  gap: 0;
+  animation: marquee 28s linear infinite;
+}
+
+.strip-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+  font-size: 12px;
+  font-weight: 300;
+  letter-spacing: 0.06em;
+  color: rgba(237,233,223,0.7);
+  padding-right: 0;
+}
+
+.strip-dot {
+  display: inline-block;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--sage);
+  margin: 0 2.5rem;
+  vertical-align: middle;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* ─── MENU SECTION ─── */
+.menu-section {
+  padding: 7rem 5vw;
+  background: var(--warm-white);
+}
+
+.section-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: end;
+  margin-bottom: 4rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.section-label {
+  font-size: 12px;
+  color: var(--sage);
+  letter-spacing: 0.07em;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.section-label::before {
+  content: '';
+  display: block;
+  width: 20px;
+  height: 1px;
+  background: var(--stone);
+}
+
+.section-title {
+  font-family: 'Lora', Georgia, serif;
+  font-size: clamp(2.2rem, 4vw, 3.4rem);
+  font-weight: 500;
+  line-height: 1.1;
+  color: var(--bark);
+  letter-spacing: -0.01em;
+}
+
+.section-aside {
+  font-size: 15px;
+  color: var(--stone);
+  font-weight: 400;
+  line-height: 1.75;
+  max-width: 380px;
+  align-self: end;
+}
+
+/* menu tabs */
+.menu-tabs {
+  display: flex;
+  gap: 0;
+  margin-bottom: 3rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.menu-tab {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--stone);
+  padding: 0.6rem 1.4rem 0.8rem;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  transition: all 0.15s;
+  background: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  font-family: 'DM Sans', system-ui, sans-serif;
+  letter-spacing: 0.01em;
+}
+.menu-tab:first-child { padding-left: 0; }
+.menu-tab.active {
+  color: var(--ink);
+  font-weight: 500;
+  border-bottom-color: var(--ink);
+}
+.menu-tab:hover { color: var(--ink); }
+
+.menu-panel { display: none; }
+.menu-panel.active { display: block; }
+
+.menu-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+}
+
+.menu-item {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: baseline;
+  gap: 1rem;
+  padding: 1.4rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.menu-item:nth-child(odd) { padding-right: 3rem; border-right: 1px solid var(--rule); }
+.menu-item:nth-child(even) { padding-left: 3rem; }
+
+.menu-item-info h4 {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--ink);
+  margin-bottom: 3px;
+}
+
+.menu-item-info p {
+  font-size: 13.5px;
+  color: var(--stone);
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.menu-tag {
+  font-size: 10px;
+  background: var(--sage-pale);
+  color: var(--sage);
+  padding: 2px 7px;
+  border-radius: 2px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  display: inline-block;
+  margin-top: 5px;
+}
+
+.menu-price {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 1.1rem;
+  color: var(--stone);
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+/* ─── ABOUT / STORY ─── */
+.story-section {
+  background: var(--bark);
+  color: var(--oat);
+  padding: 7rem 5vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  align-items: center;
+}
+
+.story-left .section-label { color: var(--sage-pale); font-weight: 600; }
+.story-left .section-label::before { background: var(--sage-pale); }
+
+.story-left .section-title { color: var(--oat); }
+
+.story-body {
+  font-size: 16px;
+  font-weight: 400;
+  color: rgba(237,233,223,0.82);
+  line-height: 1.85;
+  margin-top: 1.8rem;
+}
+
+.story-body p + p { margin-top: 1.2rem; }
+
+.story-right {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: rgba(237,233,223,0.08);
+  border: 1px solid rgba(237,233,223,0.08);
+}
+
+.story-fact {
+  padding: 2rem 1.6rem;
+  background: var(--bark);
+}
+
+.story-fact-n {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 3rem;
+  font-weight: 400;
+  color: var(--oat);
+  line-height: 1;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.story-fact-l {
+  font-size: 13px;
+  color: rgba(237,233,223,0.72);
+  font-weight: 400;
+  line-height: 1.55;
+}
+
+/* ─── PRODUCTS ─── */
+.products-section {
+  padding: 7rem 5vw;
+  background: var(--oat);
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--rule);
+  border: 1px solid var(--rule);
+  margin-top: 3.5rem;
+}
+
+.product-card {
+  background: var(--oat);
+  padding: 2.4rem 2rem;
+  transition: background 0.2s;
+  cursor: default;
+}
+.product-card:hover { background: var(--warm-white); }
+
+.product-icon-wrap {
+  width: 48px;
+  height: 48px;
+  background: var(--warm-white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  margin-bottom: 1.4rem;
+  border: 1px solid var(--rule);
+}
+
+.product-card h4 {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--bark);
+  margin-bottom: 6px;
+}
+
+.product-card p {
+  font-size: 13.5px;
+  color: var(--stone);
+  font-weight: 400;
+  line-height: 1.65;
+}
+
+.dist-strip {
+  margin-top: 3.5rem;
+  background: var(--sage);
+  color: var(--oat);
+  padding: 2.4rem 2.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.dist-strip h3 {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--oat);
+  margin-bottom: 4px;
+}
+
+.dist-strip p {
+  font-size: 14px;
+  color: rgba(237,233,223,0.85);
+  font-weight: 400;
+  max-width: 480px;
+}
+
+.dist-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  flex-shrink: 0;
+}
+
+.btn-oat {
+  background: var(--oat);
+  color: var(--bark);
+  padding: 11px 22px;
+  font-size: 13px;
+  font-weight: 500;
+  border-radius: 2px;
+  text-decoration: none;
+  white-space: nowrap;
+  display: inline-block;
+  transition: background 0.15s;
+  flex-shrink: 0;
+}
+.btn-oat:hover { background: #fff; }
+.btn-oat-secondary { background: transparent; color: var(--oat); border: 1px solid rgba(237,233,223,0.65); }
+.btn-oat-secondary:hover { background: rgba(237,233,223,0.12); color: var(--oat); }
+
+/* ─── TESTIMONIALS ─── */
+.testi-section {
+  padding: 7rem 5vw;
+  background: var(--warm-white);
+}
+
+.testi-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0;
+  border: 1px solid var(--rule);
+  margin-top: 3.5rem;
+}
+
+.testi-card {
+  padding: 2.4rem 2rem;
+  border-right: 1px solid var(--rule);
+  position: relative;
+}
+.testi-card:last-child { border-right: none; }
+
+.testi-quote-mark {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 4rem;
+  color: var(--sage-pale);
+  line-height: 1;
+  margin-bottom: 0.8rem;
+  display: block;
+  font-weight: 400;
+}
+
+.testi-card p {
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--stone);
+  line-height: 1.8;
+  font-style: italic;
+  margin-bottom: 1.5rem;
+}
+
+.testi-name {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--ink);
+  letter-spacing: 0.03em;
+  display: block;
+}
+
+.testi-role {
+  font-size: 11px;
+  color: var(--stone);
+  font-weight: 300;
+  display: block;
+  margin-top: 2px;
+}
+
+/* ─── CONTACT ─── */
+.contact-section {
+  padding: 7rem 5vw;
+  background: var(--oat);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  align-items: start;
+}
+
+.contact-details { margin-top: 3rem; }
+
+.contact-row {
+  padding: 1.4rem 0;
+  border-bottom: 1px solid var(--rule);
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 1rem;
+}
+
+.contact-row-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--stone);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding-top: 2px;
+}
+
+.contact-row-val {
+  font-size: 15px;
+  color: var(--ink);
+  font-weight: 400;
+  line-height: 1.65;
+}
+
+.contact-row-val a {
+  color: inherit;
+  text-decoration-color: var(--sage-pale);
+  text-underline-offset: 3px;
+}
+.contact-row-val a:hover { color: var(--sage); }
+
+.contact-form-wrap {
+  background: var(--warm-white);
+  border: 1px solid var(--rule);
+  padding: 2.4rem;
+}
+
+.form-title {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: var(--bark);
+  margin-bottom: 1.8rem;
+}
+
+.field {
+  margin-bottom: 1.2rem;
+}
+
+.field label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--stone);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  background: var(--oat);
+  border: 1px solid var(--rule);
+  border-radius: 0;
+  padding: 11px 13px;
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--ink);
+  outline: none;
+  transition: border-color 0.15s;
+  resize: vertical;
+  appearance: none;
+}
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  border-color: var(--sage);
+  background: #fff;
+}
+
+.field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.submit-btn {
+  width: 100%;
+  background: var(--ink);
+  color: var(--oat);
+  border: none;
+  padding: 13px;
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  border-radius: 0;
+  transition: background 0.15s;
+  margin-top: 0.5rem;
+}
+.submit-btn:hover { background: var(--sage); }
+.submit-btn:disabled { opacity: 0.65; cursor: wait; }
+
+.form-status {
+  min-height: 1.5em;
+  margin-top: 0.8rem;
+  color: var(--sage);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* ─── GEN Z POLISH ─── */
+.section-label {
+  width: fit-content;
+  padding: 5px 10px;
+  background: var(--sage);
+  color: var(--ink);
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transform: rotate(-2deg);
+}
+.section-label::before { display: none; }
+.section-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+.section-aside { font-size: 16px; }
+.menu-tabs { gap: 8px; border-bottom: 2px solid var(--ink); }
+.menu-tab {
+  border: 2px solid transparent;
+  border-radius: 999px 999px 0 0;
+  font-weight: 600;
+  padding: 0.65rem 1.1rem 0.8rem;
+}
+.menu-tab:first-child { padding-left: 1.1rem; }
+.menu-tab.active { background: var(--sage); color: var(--ink); border-color: var(--ink); }
+.menu-tab:hover { background: var(--lavender); }
+.menu-item { transition: background 0.2s, padding-left 0.2s, padding-right 0.2s; }
+.menu-item:hover { background: var(--sage-pale); padding-left: 12px; }
+.menu-item-info h4, .product-card h4, .form-title { font-family: 'Space Grotesk', sans-serif; font-weight: 700; }
+.menu-tag { background: var(--coral); color: var(--ink); border: 1px solid var(--ink); border-radius: 999px; }
+.story-section { background: var(--ink); border-top: 2px solid var(--ink); }
+.story-left .section-title { color: var(--warm-white); }
+.story-left .section-label { background: var(--coral); color: var(--ink); }
+.story-fact { transition: background 0.2s, transform 0.2s; }
+.story-fact:hover { background: var(--coral); color: var(--ink); transform: rotate(-1deg); }
+.story-fact:hover .story-fact-n, .story-fact:hover .story-fact-l { color: var(--ink); }
+.products-section { background: var(--lavender); }
+.product-card { border: 0; position: relative; overflow: hidden; }
+.product-card:nth-child(3n + 1) { background: var(--sage); }
+.product-card:nth-child(3n + 2) { background: var(--warm-white); }
+.product-card:nth-child(3n) { background: var(--coral); }
+.product-card:hover { background: var(--ink); color: var(--warm-white); transform: translateY(-4px); }
+.product-card:hover h4, .product-card:hover p { color: var(--warm-white); }
+.product-icon-wrap { border: 2px solid var(--ink); }
+.dist-strip { background: var(--ink); border: 2px solid var(--ink); }
+.testi-section { background: var(--warm-white); }
+.testi-card { transition: background 0.2s; }
+.testi-card:hover { background: var(--lavender); }
+.testi-quote-mark { color: var(--coral); }
+.contact-section { background: var(--oat); }
+.contact-form-wrap { border: 2px solid var(--ink); box-shadow: 8px 8px 0 var(--coral); }
+.field input:focus, .field select:focus, .field textarea:focus { box-shadow: 4px 4px 0 var(--sage); }
+.submit-btn { border: 2px solid var(--ink); border-radius: 999px; }
+footer { border-top: 2px solid var(--ink); }
+
+@keyframes pop-in {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.hero-left, .hero-right, .section-header, .product-card, .testi-card, .contact-form-wrap {
+  animation: pop-in 0.7s ease both;
+}
+.hero-right { animation-delay: 0.12s; }
+.product-card:nth-child(2), .testi-card:nth-child(2) { animation-delay: 0.08s; }
+.product-card:nth-child(3), .testi-card:nth-child(3) { animation-delay: 0.16s; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
+
+/* ─── CLASSIC BISTRO LAYOUT ─── */
+:root {
+  --ink: #26352B;
+  --stone: #6C6B62;
+  --oat: #E9E0CE;
+  --bark: #3A211B;
+  --sage: #45634B;
+  --sage-pale: #D6E0D0;
+  --warm-white: #FBF8F1;
+  --coral: #A65745;
+  --lavender: #E9E0CE;
+  --rule: rgba(38,53,43,0.18);
+}
+
+body { background: var(--warm-white); color: var(--ink); }
+nav {
+  height: 82px;
+  padding: 0 max(5vw, 32px);
+  background: rgba(251,248,241,0.97);
+  border-bottom: 1px solid var(--rule);
+  box-shadow: none;
+}
+.brand-logo { width: 170px; height: 70px; }
+.nav-right { gap: 2rem; }
+.nav-right a { color: var(--stone); font-size: 13px; }
+.nav-right a:hover { color: var(--sage); transform: none; }
+.nav-book {
+  color: var(--warm-white) !important;
+  background: var(--sage);
+  border: 1px solid var(--sage);
+  border-radius: 3px;
+  padding: 9px 17px;
+}
+.nav-book:hover { background: var(--bark) !important; color: var(--warm-white) !important; transform: none; }
+
+.hero {
+  min-height: auto;
+  padding-top: 82px;
+  background: var(--oat);
+}
+.hero-main {
+  min-height: 650px;
+  max-width: 1440px;
+  margin: 0 auto;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+}
+.hero-left { padding: 8rem max(5vw, 56px) 7rem; border-right: 1px solid var(--rule); }
+.hero-kicker { color: var(--sage); text-transform: none; letter-spacing: 0.04em; }
+.hero-kicker::before { width: 24px; height: 1px; background: var(--sage); }
+.hero-headline {
+  font-family: 'Lora', Georgia, serif;
+  font-size: clamp(3.3rem, 5vw, 5.5rem);
+  line-height: 1.04;
+  font-weight: 500;
+  color: var(--bark);
+}
+.hero-headline br:first-of-type { display: initial; }
+.hero-headline::after { content: ''; }
+.hero-body { max-width: 410px; font-weight: 400; }
+.btn-dark { border-radius: 3px; border: 0; background: var(--bark); }
+.btn-dark:hover { background: var(--sage); color: var(--warm-white); transform: none; }
+.btn-ghost { font-weight: 400; }
+.hero-right { border-left: 1px solid var(--rule); }
+.hero-photo-block { min-height: 540px; }
+.hero-right-footer { background: var(--sage); }
+.hero-stat-n { color: var(--oat); }
+
+.strip { background: var(--bark); padding: 11px 0; }
+.strip-inner { animation-duration: 38s; }
+.strip-item { color: rgba(251,248,241,0.78); }
+.strip-dot { background: var(--sage-pale); }
+
+.menu-section, .products-section, .testi-section, .contact-section { padding: 6rem max(5vw, 32px); }
+.section-header { max-width: 1200px; margin-left: auto; margin-right: auto; }
+.section-label {
+  padding: 0;
+  background: transparent;
+  color: var(--sage);
+  border: 0;
+  border-radius: 0;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.07em;
+  transform: none;
+}
+.section-label::before { display: block; width: 20px; height: 1px; background: var(--sage); }
+.section-title { font-family: 'Lora', Georgia, serif; font-weight: 500; color: var(--bark); }
+.section-aside { max-width: 420px; }
+.menu-tabs { max-width: 1200px; margin-left: auto; margin-right: auto; gap: 0; }
+.menu-tab, .menu-tab:first-child { border-radius: 0; border: 0; border-bottom: 2px solid transparent; background: transparent; padding: 0.6rem 1.4rem 0.8rem; }
+.menu-tab:first-child { padding-left: 0; }
+.menu-tab.active { color: var(--bark); background: transparent; border-bottom-color: var(--sage); }
+.menu-tab:hover { background: transparent; color: var(--sage); }
+.menu-panel { max-width: 1200px; margin: 0 auto; }
+.menu-item:hover { background: transparent; padding-left: 0; }
+.menu-tag { background: var(--sage-pale); color: var(--sage); border: 0; border-radius: 2px; }
+
+.story-section { padding: 6rem max(5vw, 32px); background: var(--bark); border-top: 0; }
+.story-section > * { max-width: 560px; }
+.story-left .section-label { color: var(--sage-pale); }
+.story-left .section-label::before { background: var(--sage-pale); }
+.story-left .section-title { color: var(--oat); }
+.story-right { max-width: 640px; }
+.story-fact:hover { background: var(--bark); transform: none; }
+.story-fact:hover .story-fact-n, .story-fact:hover .story-fact-l { color: var(--oat); }
+
+.products-section { background: var(--oat); }
+.products-grid, .testi-grid { max-width: 1200px; margin-left: auto; margin-right: auto; }
+.product-card, .product-card:nth-child(3n + 1), .product-card:nth-child(3n + 2), .product-card:nth-child(3n) { background: var(--warm-white); border: 0; }
+.product-card { border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+.product-card:hover { background: #fff; color: var(--ink); transform: none; }
+.product-card:hover h4, .product-card:hover p { color: inherit; }
+.product-icon-wrap { background: var(--sage-pale); border: 0; }
+.dist-strip { max-width: 1200px; margin-left: auto; margin-right: auto; background: var(--sage); border: 0; }
+.btn-oat { border-radius: 3px; }
+.btn-oat-secondary { border-color: rgba(251,248,241,0.65); }
+.testi-grid { background: var(--warm-white); }
+.testi-card:hover { background: transparent; }
+.testi-quote-mark { color: var(--sage-pale); }
+.contact-form-wrap { box-shadow: none; border: 1px solid var(--rule); }
+.submit-btn { border: 0; border-radius: 3px; }
+.field input:focus, .field select:focus, .field textarea:focus { box-shadow: none; }
+
+.hero-left, .hero-right, .section-header, .product-card, .testi-card, .contact-form-wrap { animation: none; }
+
+@media (max-width: 800px) {
+  nav { height: 118px; padding: 4px 16px 8px; }
+  .brand-logo { width: 160px; height: 72px; }
+  .nav-right { gap: 1rem; }
+  .nav-right a { font-size: 12px; }
+  .hero { padding-top: 118px; }
+  .hero-main { min-height: auto; }
+  .hero-left { padding: 5rem 8vw 4rem; border-right: 0; }
+  .hero-headline { font-size: clamp(3rem, 14vw, 4.5rem); }
+  .hero-photo-block { min-height: 340px; }
+  .menu-section, .products-section, .testi-section, .contact-section { padding: 4.5rem 7vw; }
+  .section-header { margin-bottom: 2.5rem; }
+  .menu-tabs { overflow-x: auto; white-space: nowrap; }
+  .menu-tab, .menu-tab:first-child { padding-left: 0.9rem; padding-right: 0.9rem; }
+  .story-section { padding: 4.5rem 7vw; }
+  .products-grid { grid-template-columns: 1fr 1fr; }
+  .dist-strip { margin-top: 2rem; }
+}
+
+/* ─── FOOTER ─── */
+footer {
+  background: var(--ink);
+  color: var(--oat);
+  padding: 3.5rem 5vw 2rem;
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 4rem;
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid rgba(237,233,223,0.1);
+  margin-bottom: 1.5rem;
+}
+
+.footer-about p {
+  font-size: 13px;
+  font-weight: 400;
+  color: rgba(237,233,223,0.65);
+  line-height: 1.75;
+  max-width: 280px;
+  margin-top: 1.2rem;
+}
+
+.footer-col h5 {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: rgba(237,233,223,0.6);
+  text-transform: uppercase;
+  margin-bottom: 1.2rem;
+}
+
+.footer-col ul { list-style: none; }
+.footer-col li { margin-bottom: 0.6rem; }
+.footer-col a {
+  font-size: 13px;
+  font-weight: 400;
+  color: rgba(237,233,223,0.75);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+.footer-col a:hover { color: var(--oat); }
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 11px;
+  color: rgba(237,233,223,0.3);
+  font-weight: 300;
+}
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 800px) {
+  nav {
+    height: 132px;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+    padding: 6px 16px 8px;
+  }
+  nav > a { line-height: 0; }
+  .brand-logo {
+    width: 180px;
+    height: 82px;
+  }
+  .nav-right {
+    width: 100%;
+    justify-content: space-between;
+    gap: 8px;
+  }
+  .nav-right a {
+    font-size: 12px;
+    white-space: nowrap;
+  }
+  .nav-book { padding: 6px 10px; }
+  .hero { padding-top: 132px; }
+  .hero-main { min-height: calc(100svh - 132px); }
+  .hero-main { grid-template-columns: 1fr; }
+  .hero-right { display: none; }
+  .section-header { grid-template-columns: 1fr; }
+  .menu-list { grid-template-columns: 1fr; }
+  .menu-item:nth-child(odd) { padding-right: 0; border-right: none; }
+  .menu-item:nth-child(even) { padding-left: 0; }
+  .story-section { grid-template-columns: 1fr; gap: 3rem; }
+  .products-grid { grid-template-columns: 1fr 1fr; }
+  .testi-grid { grid-template-columns: 1fr; }
+  .testi-card { border-right: none; border-bottom: 1px solid var(--rule); }
+  .contact-section { grid-template-columns: 1fr; gap: 3rem; }
+  .footer-top { grid-template-columns: 1fr; gap: 2rem; }
+  .dist-strip { flex-direction: column; align-items: flex-start; }
+  .nav-right { gap: 1.4rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" style="text-decoration:none;">
+    <img src="celicasa-logo.png" alt="CeliCasa Gluten-Free Cafe" class="brand-logo"/>
+  </a>
+  <div class="nav-right">
+    <a href="#menu">Menu</a>
+    <a href="#products">Shop</a>
+    <a href="#story">Our Story</a>
+    <a href="#contact" class="nav-book">Visit Us</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-main">
+    <div class="hero-left">
+      <div class="hero-kicker">Greater Noida's only dedicated gluten-free cafe</div>
+      <h1 class="hero-headline">Food that<br/>loves you<br/>back.</h1>
+      <p class="hero-body">Every single dish. Every product on our shelves. Made in a kitchen that has never seen a grain of gluten — because for our guests with celiac disease, almost safe is not safe.</p>
+      <div class="hero-actions">
+        <a href="#menu" class="btn-dark">See the menu</a>
+        <a href="#story" class="btn-ghost">Our story</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-photo-block">
+        <!-- Hand-drawn style food illustration -->
+        <svg viewBox="0 0 520 480" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" style="background:#3B2E22;">
+          <!-- Background warmth -->
+          <rect width="520" height="480" fill="#3B2E22"/>
+          <ellipse cx="260" cy="240" rx="240" ry="220" fill="#4A3828" opacity="0.4"/>
+
+          <!-- Big bowl/plate -->
+          <ellipse cx="260" cy="310" rx="155" ry="30" fill="#2A1F14" opacity="0.5"/>
+          <ellipse cx="260" cy="295" rx="148" ry="28" fill="#5C3D20"/>
+          <ellipse cx="260" cy="285" rx="140" ry="22" fill="#7A5230"/>
+          <ellipse cx="260" cy="278" rx="130" ry="18" fill="#EDE9DF" opacity="0.93"/>
+
+          <!-- Salad greens -->
+          <ellipse cx="235" cy="262" rx="30" ry="14" fill="#4E6A47" transform="rotate(-15 235 262)"/>
+          <ellipse cx="270" cy="258" rx="26" ry="11" fill="#5C7A55" transform="rotate(10 270 258)"/>
+          <ellipse cx="300" cy="265" rx="22" ry="10" fill="#4E6A47" transform="rotate(-5 300 265)"/>
+          <ellipse cx="220" cy="272" rx="20" ry="9"  fill="#6B8F5E" transform="rotate(20 220 272)"/>
+
+          <!-- Cherry tomatoes -->
+          <circle cx="255" cy="255" r="11" fill="#C0392B"/>
+          <circle cx="255" cy="255" r="11" fill="url(#tomatoGrad)"/>
+          <ellipse cx="259" cy="250" rx="3" ry="2" fill="rgba(255,255,255,0.25)" transform="rotate(-20 259 250)"/>
+          <circle cx="290" cy="260" r="9" fill="#C0392B"/>
+          <circle cx="290" cy="260" r="9" fill="url(#tomatoGrad)"/>
+
+          <!-- Quinoa texture dots -->
+          <circle cx="240" cy="270" r="2.5" fill="#C8A97A"/>
+          <circle cx="248" cy="274" r="2" fill="#C8A97A"/>
+          <circle cx="256" cy="268" r="2.5" fill="#C8A97A"/>
+          <circle cx="264" cy="275" r="2" fill="#D4B888"/>
+          <circle cx="272" cy="269" r="2.5" fill="#C8A97A"/>
+          <circle cx="280" cy="274" r="2" fill="#C8A97A"/>
+          <circle cx="245" cy="278" r="2" fill="#C8A97A"/>
+          <circle cx="265" cy="280" r="2.5" fill="#D4B888"/>
+          <circle cx="285" cy="278" r="2" fill="#C8A97A"/>
+
+          <!-- Avocado half -->
+          <ellipse cx="310" cy="258" rx="22" ry="28" fill="#7AB648" transform="rotate(15 310 258)"/>
+          <ellipse cx="312" cy="259" rx="14" ry="18" fill="#A8D878" transform="rotate(15 312 259)"/>
+          <ellipse cx="313" cy="260" rx="8"  ry="11" fill="#5C3D20" transform="rotate(15 313 260)"/>
+
+          <!-- Sourdough slice leaning -->
+          <rect x="155" y="215" width="52" height="68" rx="6" fill="#C8A97A" transform="rotate(-12 155 215)"/>
+          <rect x="160" y="220" width="42" height="58" rx="4" fill="#E8C990" transform="rotate(-12 160 220)"/>
+          <!-- bread texture lines -->
+          <line x1="165" y1="230" x2="195" y2="233" stroke="#C8A97A" stroke-width="1.2" opacity="0.7" transform="rotate(-12 180 231)"/>
+          <line x1="165" y1="240" x2="195" y2="243" stroke="#C8A97A" stroke-width="1.2" opacity="0.7" transform="rotate(-12 180 241)"/>
+          <line x1="165" y1="250" x2="195" y2="253" stroke="#C8A97A" stroke-width="1.2" opacity="0.7" transform="rotate(-12 180 251)"/>
+
+          <!-- Coffee cup -->
+          <rect x="348" y="228" width="58" height="48" rx="8" fill="#5C3D20"/>
+          <rect x="352" y="232" width="50" height="40" rx="6" fill="#7A5230"/>
+          <!-- coffee surface -->
+          <ellipse cx="377" cy="234" rx="23" ry="6" fill="#2A1F14"/>
+          <ellipse cx="377" cy="233" rx="20" ry="5" fill="#3D2410"/>
+          <!-- latte art -->
+          <path d="M 372 230 Q 377 236 382 230" stroke="#C8A97A" stroke-width="1.5" fill="none" opacity="0.8"/>
+          <path d="M 369 232 Q 377 240 385 232" stroke="#C8A97A" stroke-width="1" fill="none" opacity="0.5"/>
+          <!-- handle -->
+          <path d="M 406 238 Q 420 240 420 252 Q 420 264 406 266" stroke="#5C3D20" stroke-width="4" fill="none" stroke-linecap="round"/>
+          <!-- saucer -->
+          <ellipse cx="377" cy="278" rx="36" ry="8" fill="#4A3828"/>
+          <ellipse cx="377" cy="276" rx="32" ry="6.5" fill="#7A6050"/>
+          <!-- steam -->
+          <path d="M 370 222 Q 368 215 370 208 Q 372 201 370 194" stroke="rgba(237,233,223,0.3)" stroke-width="2" fill="none" stroke-linecap="round"/>
+          <path d="M 378 219 Q 376 212 378 205 Q 380 198 378 191" stroke="rgba(237,233,223,0.2)" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+          <path d="M 386 222 Q 384 215 386 208 Q 388 201 386 194" stroke="rgba(237,233,223,0.25)" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+
+          <!-- Herb sprigs -->
+          <line x1="228" y1="248" x2="228" y2="225" stroke="#4E6A47" stroke-width="1.8" stroke-linecap="round"/>
+          <ellipse cx="224" cy="232" rx="5" ry="3" fill="#5C7A55" transform="rotate(-30 224 232)"/>
+          <ellipse cx="232" cy="236" rx="5" ry="3" fill="#4E6A47" transform="rotate(25 232 236)"/>
+          <ellipse cx="223" cy="240" rx="4" ry="2.5" fill="#5C7A55" transform="rotate(-40 223 240)"/>
+
+          <!-- Scattered seeds -->
+          <ellipse cx="245" cy="260" rx="2" ry="4" fill="#8C6A40" transform="rotate(20 245 260)" opacity="0.8"/>
+          <ellipse cx="275" cy="265" rx="2" ry="4" fill="#8C6A40" transform="rotate(-15 275 265)" opacity="0.8"/>
+          <ellipse cx="262" cy="272" rx="2" ry="4" fill="#7A5A32" transform="rotate(35 262 272)" opacity="0.8"/>
+
+          <!-- Label at bottom -->
+          <rect x="170" y="330" width="180" height="30" rx="3" fill="rgba(237,233,223,0.08)"/>
+          <text x="260" y="350" text-anchor="middle" font-family="'Lora', Georgia, serif" font-size="13" fill="rgba(237,233,223,0.55)" letter-spacing="2" font-style="italic">the harvest bowl</text>
+
+          <defs>
+            <radialGradient id="tomatoGrad" cx="30%" cy="30%">
+              <stop offset="0%" stop-color="#E74C3C"/>
+              <stop offset="100%" stop-color="#922B21"/>
+            </radialGradient>
+          </defs>
+        </svg>
+      </div>
+      <div class="hero-right-footer">
+        <div class="hero-stat">
+          <span class="hero-stat-n">100%</span>
+          <span class="hero-stat-l">Gluten-free kitchen</span>
+        </div>
+        <div class="hero-stat" style="border-left:1px solid rgba(237,233,223,0.15); border-right:1px solid rgba(237,233,223,0.15);">
+          <span class="hero-stat-n">50+</span>
+          <span class="hero-stat-l">Menu items</span>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-n">&lt;20ppm</span>
+          <span class="hero-stat-l">Lab certified safe</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE STRIP -->
+<div class="strip">
+  <div class="strip-inner">
+    <span class="strip-item">Certified Gluten-Free Kitchen</span><span class="strip-dot"></span>
+    <span class="strip-item">FSSAI Licensed</span><span class="strip-dot"></span>
+    <span class="strip-item">Zero Cross-Contamination</span><span class="strip-dot"></span>
+    <span class="strip-item">Pan India Delivery</span><span class="strip-dot"></span>
+    <span class="strip-item">Celiac Disease Safe</span><span class="strip-dot"></span>
+    <span class="strip-item">Lab Tested Below 20ppm</span><span class="strip-dot"></span>
+    <span class="strip-item">No Shared Equipment</span><span class="strip-dot"></span>
+    <span class="strip-item">Fresh Daily</span><span class="strip-dot"></span>
+    <!-- duplicate for seamless loop -->
+    <span class="strip-item">Certified Gluten-Free Kitchen</span><span class="strip-dot"></span>
+    <span class="strip-item">FSSAI Licensed</span><span class="strip-dot"></span>
+    <span class="strip-item">Zero Cross-Contamination</span><span class="strip-dot"></span>
+    <span class="strip-item">Pan India Delivery</span><span class="strip-dot"></span>
+    <span class="strip-item">Celiac Disease Safe</span><span class="strip-dot"></span>
+    <span class="strip-item">Lab Tested Below 20ppm</span><span class="strip-dot"></span>
+    <span class="strip-item">No Shared Equipment</span><span class="strip-dot"></span>
+    <span class="strip-item">Fresh Daily</span><span class="strip-dot"></span>
+  </div>
+</div>
+
+<!-- MENU -->
+<section class="menu-section" id="menu">
+  <div class="section-header">
+    <div>
+      <div class="section-label">What we make</div>
+      <h2 class="section-title">A menu with<br/>nothing to hide.</h2>
+    </div>
+    <p class="section-aside">Every dish is made from scratch each morning. We list every ingredient — not because we have to, but because you deserve to know exactly what you're eating.</p>
+  </div>
+
+  <div class="menu-tabs">
+    <button class="menu-tab active" onclick="switchTab('breakfast', this)">Breakfast</button>
+    <button class="menu-tab" onclick="switchTab('mains', this)">Mains</button>
+    <button class="menu-tab" onclick="switchTab('bakes', this)">Bakes & Sweets</button>
+    <button class="menu-tab" onclick="switchTab('drinks', this)">Drinks</button>
+  </div>
+
+  <div class="menu-panel active" id="breakfast">
+    <div class="menu-list">
+      <div class="menu-item">
+        <div class="menu-item-info">
+          <h4>Buckwheat Sourdough Toast</h4>
+          <p>Cultured buckwheat loaf, house-milled. With cultured butter & Himalayan salt flakes.</p>
+          <span class="menu-tag">Vegan option</span>
+        </div>
+        <div class="menu-price">₹180</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-info">
+          <h4>Ricotta & Honey Pancakes</h4>
+          <p>Brown rice flour stack, fresh ricotta, wildflower honey, seasonal berries.</p>
+        </div>
+        <div class="menu-price">₹240</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-info">
+          <h4>Masala Oats Bowl</h4>
+          <p>Certified GF oats, curry leaf tadka, tomato, roasted cumin, soft-poached egg.</p>
+          <span class="menu-tag">High protein</span>
+        </div>
+        <div class="menu-price">₹210</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-info">
+          <h4>Avocado & Seed Toast</h4>
+          <p>Smashed avocado, house-pickled radish, pumpkin seeds, chilli oil, lemon zest.</p>
+          <span class="menu-tag">Vegan</span>
+        </div>
+        <div class="menu-price">₹260</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-info">
+          <h4>Morning Granola</h4>
+          <p>House-toasted GF oats, coconut, dates, almonds. With oat milk or Greek yoghurt.</p>
+          <span class="menu-tag">Vegan option</span>
+        </div>
+        <div class="menu-price">₹190</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-info">
+          <h4>Shakshuka</h4>
+          <p>Spiced tomato & pepper broth, two free-range eggs, served with GF bread.</p>
+          <span class="menu-tag">Vegetarian</span>
+        </div>
+        <div class="menu-price">₹280</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="menu-panel" id="mains">
+    <div class="menu-list">
+      <div class="menu-item">
+        <div class="menu-item-info">
+          <h4>Harvest Quinoa Bowl</h4>
+          <p>Tri-colour quinoa, roasted seasonal vegetables, tahini, pomegranate, micro herbs.</p>
+          <span class="menu-tag">Vegan</span>
+        </div>
+        <div class="menu-price">₹320</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-info">
+          <h4>Cauliflower Crust Pizza</h4>
+          <p>Certified GF crust, San Marzano tomato, buffalo mozzarella, fresh basil.</p>
+          <span class="menu-tag">Vegetarian</span>
+        </div>
+        <div class="menu-price">₹380</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-info">
+          <h4>Brown Rice Penne</h4>
+          <p>House-made pesto, roasted cherry tomato, pine nuts, aged parmesan.</p>
+          <span class="menu-tag">Vegetarian</span>
+        </div>
+        <div class="menu-price">₹340</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-info">
+          <h4>Grilled Paneer Wrap</h4>
+          <p>Millet-flour roti, tandoori paneer, mint chutney, pickled onion, cucumber.</p>
+          <span class="menu-tag">Vegetarian</span>
+        </div>
+        <div class="menu-price">₹290</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-info">
+          <h4>Lentil & Coconut Dal</h4>
+          <p>Red masoor slow-cooked in coconut milk, tempered with mustard & curry leaf.</p>
+          <span class="menu-tag">Vegan</span>
+        </div>
+        <div class="menu-price">₹260</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-info">
+          <h4>Soba Noodle Salad</h4>
+          <p>100% buckwheat soba, edamame, sesame dressing, shredded cabbage, spring onion.</p>
+          <span class="menu-tag">Vegan</span>
+        </div>
+        <div class="menu-price">₹310</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="menu-panel" id="bakes">
+    <div class="menu-list">
+      <div class="menu-item">
+        <div class="menu-item-info">
+          <h4>Dark Chocolate Almond Torte</h4>
+          <p>Single-origin 72% dark chocolate, almond flour, no refined sugar.</p>
+        </div>
+        <div class="menu-price">₹180</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-info">
+          <h4>Cardamom Semolina Cake</h4>
+          <p>Rice-semolina base, green cardamom, rose water glaze, pistachio.</p>
+          <span class="menu-tag">Vegetarian</span>
+        </div>
+        <div class="menu-price">₹160</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-info">
+          <h4>Salted Caramel Blondie</h4>
+          <p>Almond & tapioca flour, Medjool dates, coconut cream caramel, fleur de sel.</p>
+          <span class="menu-tag">Vegan</span>
+        </div>
+        <div class="menu-price">₹150</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-info">
+          <h4>Tahini Cookies</h4>
+          <p>Oat flour, tahini, dark chocolate chips, sesame, a little sea salt.</p>
+          <span class="menu-tag">Vegan</span>
+        </div>
+        <div class="menu-price">₹120 / 3pc</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-info">
+          <h4>Banana Walnut Loaf</h4>
+          <p>Spelt-free, millet flour base, ripe Robusta banana, toasted walnuts.</p>
+          <span class="menu-tag">Vegan</span>
+        </div>
+        <div class="menu-price">₹140 / slice</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-info">
+          <h4>Berry Chia Tart</h4>
+          <p>Almond flour shell, coconut-chia cream, fresh seasonal berries.</p>
+        </div>
+        <div class="menu-price">₹200</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="menu-panel" id="drinks">
+    <div class="menu-list">
+      <div class="menu-item">
+        <div class="menu-item-info">
+          <h4>Single-Origin Filter Coffee</h4>
+          <p>Pour-over or cold drip. Sourced from Coorg, Araku & Wayanad micro-roasters.</p>
+        </div>
+        <div class="menu-price">₹140</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-info">
+          <h4>Oat Milk Flat White</h4>
+          <p>Double ristretto, house-made oat milk, microfoam. Naturally gluten-free oats.</p>
+        </div>
+        <div class="menu-price">₹180</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-info">
+          <h4>Golden Milk Latte</h4>
+          <p>Turmeric, ginger, black pepper, ashwagandha, coconut milk, honey.</p>
+          <span class="menu-tag">Vegan</span>
+        </div>
+        <div class="menu-price">₹160</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-info">
+          <h4>Hibiscus & Rose Cooler</h4>
+          <p>Cold-brewed hibiscus, dried rose petals, cane sugar, lime, sparkling water.</p>
+          <span class="menu-tag">Vegan</span>
+        </div>
+        <div class="menu-price">₹140</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-info">
+          <h4>Masala Chai</h4>
+          <p>Assam CTC, whole spice blend, ginger, full-cream or oat milk.</p>
+        </div>
+        <div class="menu-price">₹100</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-info">
+          <h4>Watermelon Mint Juice</h4>
+          <p>Cold-pressed watermelon, fresh mint, black salt, no added sugar.</p>
+          <span class="menu-tag">Vegan</span>
+        </div>
+        <div class="menu-price">₹130</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STORY -->
+<section class="story-section" id="story">
+  <div class="story-left">
+    <div class="section-label">Why we exist</div>
+    <h2 class="section-title">Celi. Casa.<br/>House of the celiac.</h2>
+    <div class="story-body">
+      <p>CeliCasa started from a place of frustration. Eating out with celiac disease in India meant a constant negotiation — "can you make it without flour?" — followed by a stomach ache that told you the answer was no.</p>
+      <p>We built a cafe where that conversation never has to happen. Our kitchen has never had wheat, barley, rye, or regular oats inside it. Every supplier is vetted. Every ingredient is tested. And every person who works here knows exactly why that matters.</p>
+      <p>We also distribute certified gluten-free products across India, because eating safe shouldn't be a privilege limited to those who live near a specialist cafe.</p>
+    </div>
+  </div>
+  <div class="story-right">
+    <div class="story-fact">
+      <span class="story-fact-n">1 in 100</span>
+      <div class="story-fact-l">people globally have celiac disease — most go undiagnosed for years</div>
+    </div>
+    <div class="story-fact">
+      <span class="story-fact-n">&lt;20ppm</span>
+      <div class="story-fact-l">the international safe threshold. We test every product to confirm.</div>
+    </div>
+    <div class="story-fact">
+      <span class="story-fact-n">0</span>
+      <div class="story-fact-l">shared surfaces, shared equipment, or shared storage with gluten</div>
+    </div>
+    <div class="story-fact">
+      <span class="story-fact-n">100%</span>
+      <div class="story-fact-l">of our menu — not a "GF section". The whole thing, always.</div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="products-section" id="products">
+  <div class="section-header">
+    <div>
+      <div class="section-label">Take it home</div>
+      <h2 class="section-title">The pantry,<br/>delivered.</h2>
+    </div>
+    <p class="section-aside">We source, vet, and distribute the best certified gluten-free pantry products in India — because eating safe at home is just as important as eating out.</p>
+  </div>
+
+  <div class="products-grid">
+    <div class="product-card">
+      <div class="product-icon-wrap">🌾</div>
+      <h4>Flour Blends</h4>
+      <p>Rice, almond, sorghum, tapioca, and teff — milled fresh, tested for cross-contamination.</p>
+    </div>
+    <div class="product-card">
+      <div class="product-icon-wrap">🍝</div>
+      <h4>Pasta & Noodles</h4>
+      <p>Brown rice penne, chickpea fusilli, 100% buckwheat soba. No wheat starch fillers.</p>
+    </div>
+    <div class="product-card">
+      <div class="product-icon-wrap">🥣</div>
+      <h4>Certified GF Oats</h4>
+      <p>Purity protocol oats — grown, harvested and milled in dedicated GF fields.</p>
+    </div>
+    <div class="product-card">
+      <div class="product-icon-wrap">🍪</div>
+      <h4>Baked Goods</h4>
+      <p>Our own cafe bakes, vacuum-sealed for freshness. Cookies, loaves, crackers.</p>
+    </div>
+    <div class="product-card">
+      <div class="product-icon-wrap">🫙</div>
+      <h4>Condiments & Sauces</h4>
+      <p>Tamari, GF soy, miso, gravies — all sourced without hidden gluten carriers.</p>
+    </div>
+    <div class="product-card">
+      <div class="product-icon-wrap">🧁</div>
+      <h4>Baking Kits</h4>
+      <p>Pre-measured mixes for bread, cake, and pancakes. Clear instructions, perfect results.</p>
+    </div>
+  </div>
+
+  <div class="dist-strip">
+    <div>
+      <h3>Stocking a restaurant, hospital or health store?</h3>
+      <p>We supply B2B wholesale across India with bulk pricing, dedicated account support, and documentation for celiac-safe certification of your kitchen or menu.</p>
+    </div>
+    <div class="dist-actions">
+      <a href="mailto:hello@celicasa.in?subject=Product%20enquiry" class="btn-oat">Order by email</a>
+      <a href="#contact" class="btn-oat btn-oat-secondary">Get in touch</a>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testi-section">
+  <div class="section-header">
+    <div>
+      <div class="section-label">From our guests</div>
+      <h2 class="section-title">What it means<br/>to eat freely.</h2>
+    </div>
+    <p class="section-aside">These aren't reviews about food preferences. They're from people for whom eating gluten is a medical issue — and who finally found a place that gets it.</p>
+  </div>
+  <div class="testi-grid">
+    <div class="testi-card">
+      <span class="testi-quote-mark">"</span>
+      <p>I've been celiac for fourteen years. CeliCasa is the first restaurant I've eaten at without anxiety. I ate the sourdough toast and cried. I hadn't had real bread in a decade.</p>
+      <span class="testi-name">Priya Menon</span>
+      <span class="testi-role">Celiac Disease patient, Greater Noida</span>
+    </div>
+    <div class="testi-card">
+      <span class="testi-quote-mark">"</span>
+      <p>We stock CeliCasa products in our wellness store. Customers with gluten sensitivity drive from across the NCR specifically because they trust this brand. Nothing else comes close.</p>
+      <span class="testi-name">Rahul Kapoor</span>
+      <span class="testi-role">Owner, Wholesome Living, Sector 18 Noida</span>
+    </div>
+    <div class="testi-card">
+      <span class="testi-quote-mark">"</span>
+      <p>As a dietitian, I now recommend CeliCasa products to every newly diagnosed celiac patient I see. The safety credentials and ingredient transparency are unmatched in this region.</p>
+      <span class="testi-name">Dr. Sunita Arora</span>
+      <span class="testi-role">Clinical Dietitian, Fortis Hospital, Noida</span>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <div>
+    <div class="section-label">Find us</div>
+    <h2 class="section-title">Come in.<br/>We've been<br/>expecting you.</h2>
+    <div class="contact-details">
+      <div class="contact-row">
+        <div class="contact-row-label">Address</div>
+        <div class="contact-row-val">
+          <a href="https://www.google.com/maps/search/?api=1&query=Greater+Noida%2C+Uttar+Pradesh+201310" target="_blank" rel="noopener">
+            Greater Noida, Uttar Pradesh<br/>India — 201 310
+          </a>
+        </div>
+      </div>
+      <div class="contact-row">
+        <div class="contact-row-label">Hours</div>
+        <div class="contact-row-val">Monday – Saturday: 8 am – 9 pm<br/>Sunday: 9 am – 6 pm</div>
+      </div>
+      <div class="contact-row">
+        <div class="contact-row-label">Email</div>
+        <div class="contact-row-val"><a href="mailto:hello@celicasa.in">hello@celicasa.in</a></div>
+      </div>
+      <div class="contact-row">
+        <div class="contact-row-label">Delivery</div>
+        <div class="contact-row-val">Same-day in Greater Noida<br/>Pan India via courier — 2 to 5 days</div>
+      </div>
+      <div class="contact-row">
+        <div class="contact-row-label">Wholesale</div>
+        <div class="contact-row-val">B2B enquiries welcome<br/>Restaurants, hospitals, health stores</div>
+      </div>
+    </div>
+  </div>
+  <div class="contact-form-wrap">
+    <div class="form-title">Send us a note</div>
+    <form name="contact" method="POST" action="https://formspree.io/f/xeaqrqda">
+      <input type="hidden" name="_subject" value="New CeliCasa website enquiry"/>
+      <div class="field-row">
+        <div class="field">
+          <label for="first-name">First name</label>
+          <input id="first-name" name="first-name" type="text" placeholder="Arjun" required/>
+        </div>
+        <div class="field">
+          <label for="last-name">Last name</label>
+          <input id="last-name" name="last-name" type="text" placeholder="Sharma" required/>
+        </div>
+      </div>
+      <div class="field">
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" placeholder="you@email.com" required/>
+      </div>
+      <div class="field">
+        <label for="topic">What's this about?</label>
+        <select id="topic" name="topic">
+          <option>Visit the cafe</option>
+          <option>Order products online</option>
+          <option>Wholesale enquiry</option>
+          <option>Distribution partnership</option>
+          <option>Something else</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="4" placeholder="Tell us what you need…" required></textarea>
+      </div>
+      <button class="submit-btn" type="submit">Send message</button>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-about">
+      <svg viewBox="0 0 190 44" xmlns="http://www.w3.org/2000/svg" height="34">
+        <g transform="translate(1,4)">
+          <line x1="14" y1="32" x2="22" y2="8" stroke="rgba(237,233,223,0.7)" stroke-width="1.5" stroke-linecap="round"/>
+          <ellipse cx="18" cy="23" rx="6" ry="3.8" fill="rgba(237,233,223,0.55)" transform="rotate(-38 18 23)"/>
+          <ellipse cx="23" cy="15" rx="5.2" ry="3.2" fill="rgba(237,233,223,0.55)" transform="rotate(-42 23 15)"/>
+          <ellipse cx="27" cy="8"  rx="4.4" ry="2.8" fill="rgba(237,233,223,0.55)" transform="rotate(-30 27 8)"/>
+        </g>
+        <text x="36" y="32" font-family="'Lora', Georgia, serif" font-size="26" font-weight="500" fill="rgba(237,233,223,0.85)" letter-spacing="-0.5">CeliCasa</text>
+        <text x="36" y="42" font-family="Arial, sans-serif" font-size="7.5" font-weight="400" fill="rgba(237,233,223,0.35)" letter-spacing="3.5">GLUTEN-FREE CAFE</text>
+      </svg>
+      <p>Greater Noida's first 100% dedicated gluten-free cafe and distribution brand. Every dish, every product — safe for the celiac community.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Cafe</h5>
+      <ul>
+        <li><a href="#menu">Full menu</a></li>
+        <li><a href="#contact">Reserve a table</a></li>
+        <li><a href="#contact">Private events</a></li>
+        <li><a href="#contact">Catering</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Shop</h5>
+      <ul>
+        <li><a href="#products">All products</a></li>
+        <li><a href="#products">Wholesale</a></li>
+        <li><a href="#products">Distribution</a></li>
+        <li><a href="#contact">Gift boxes</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 CeliCasa. All rights reserved.</span>
+    <span>FSSAI Licensed · Celiac Disease Safe · Greater Noida, India</span>
+  </div>
+</footer>
+
+<script>
+function switchTab(id, btn) {
+  document.querySelectorAll('.menu-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.menu-tab').forEach(b => b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  btn.classList.add('active');
+}
+
+</script>
+</body>
+</html>
