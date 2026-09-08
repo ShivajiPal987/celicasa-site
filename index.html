@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#eee9dc">
+  <meta name="description" content="CeliCasa gluten-free cafe coming soon to Greater Noida.">
+  <title>CeliCasa | Coming Soon</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --paper: #eee9dc;
+      --ink: #2b211a;
+      --muted: #857e70;
+      --line: #d6d0c2;
+      --sage: #8e9d7d;
+      --logo-panel: #ead9ae;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { min-height: 100%; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: 'DM Sans', Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .coming-soon {
+      position: relative;
+      display: flex;
+      min-height: 100svh;
+      padding: clamp(46px, 8vw, 82px) clamp(24px, 10vw, 118px) clamp(36px, 6vw, 62px);
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      overflow: hidden;
+    }
+
+    .coming-soon::before,
+    .coming-soon::after {
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      content: '';
+      border-color: #625d52;
+      border-style: solid;
+      opacity: .8;
+    }
+    .coming-soon::before {
+      top: 20px;
+      left: 20px;
+      border-width: 1px 0 0 1px;
+    }
+    .coming-soon::after {
+      right: 20px;
+      bottom: 20px;
+      border-width: 0 1px 1px 0;
+    }
+
+    .corner-top-right,
+    .corner-bottom-left {
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      border-color: #625d52;
+      border-style: solid;
+      opacity: .8;
+    }
+    .corner-top-right {
+      top: 20px;
+      right: 20px;
+      border-width: 1px 1px 0 0;
+    }
+    .corner-bottom-left {
+      bottom: 20px;
+      left: 20px;
+      border-width: 0 0 1px 1px;
+    }
+
+    .topline,
+    .bottomline {
+      position: relative;
+      z-index: 1;
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: .21em;
+      line-height: 1.4;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .topline { margin: 0; }
+
+    .content {
+      display: flex;
+      width: min(100%, 600px);
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      transform: translateY(-1.5vh);
+    }
+
+    .logo-panel {
+      display: grid;
+      width: clamp(205px, 32vw, 242px);
+      height: clamp(205px, 32vw, 242px);
+      margin-bottom: clamp(36px, 5vw, 48px);
+      place-items: center;
+      background: var(--logo-panel);
+    }
+
+    .logo-panel img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      padding: 12px;
+      object-fit: contain;
+    }
+
+    .divider {
+      display: flex;
+      width: min(100%, 342px);
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 29px;
+    }
+    .divider::before,
+    .divider::after {
+      height: 1px;
+      flex: 1;
+      background: var(--line);
+      content: '';
+    }
+    .divider-mark {
+      position: relative;
+      width: 12px;
+      height: 14px;
+    }
+    .divider-mark::before,
+    .divider-mark::after {
+      position: absolute;
+      top: 3px;
+      width: 7px;
+      height: 11px;
+      border-radius: 100% 0 100% 0;
+      background: var(--sage);
+      content: '';
+    }
+    .divider-mark::before { left: 1px; transform: rotate(-24deg); }
+    .divider-mark::after { right: 1px; transform: scaleX(-1) rotate(-24deg); }
+
+    h1 {
+      margin: 0;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(58px, 8.5vw, 78px);
+      font-weight: 500;
+      letter-spacing: -.025em;
+      line-height: .9;
+    }
+
+    .subtitle {
+      margin: 24px 0 0;
+      color: var(--muted);
+      font-size: clamp(10px, 1.55vw, 12px);
+      font-weight: 500;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    .opening-label {
+      margin: 42px 0 6px;
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: .19em;
+      text-transform: uppercase;
+    }
+
+    .location {
+      margin: 0;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 21px;
+      font-weight: 600;
+      letter-spacing: .03em;
+    }
+
+    .bottomline {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      letter-spacing: .13em;
+    }
+    .bottomline span { white-space: nowrap; }
+    .dot { color: var(--sage); font-size: 13px; }
+
+    @media (max-width: 520px) {
+      .coming-soon { padding: 50px 22px 38px; }
+      .content { transform: translateY(-2vh); }
+      .bottomline { gap: 8px; font-size: 8px; letter-spacing: .1em; }
+      .subtitle { letter-spacing: .1em; }
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      .content { animation: appear .8s ease both; }
+      .topline { animation: appear .6s ease both; }
+      .bottomline { animation: appear .6s .25s ease both; }
+      @keyframes appear { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(-1.5vh); } }
+    }
+  </style>
+</head>
+<body>
+  <main class="coming-soon">
+    <span class="corner-top-right" aria-hidden="true"></span>
+    <span class="corner-bottom-left" aria-hidden="true"></span>
+
+    <p class="topline">Something good is on its way</p>
+
+    <section class="content" aria-labelledby="coming-soon-title">
+      <div class="logo-panel">
+        <img src="celicasa-logo.png" alt="CeliCasa Gluten-Free Cafe">
+      </div>
+      <div class="divider" aria-hidden="true"><span class="divider-mark"></span></div>
+      <h1 id="coming-soon-title">Coming Soon</h1>
+      <p class="subtitle">Greater Noida's first 100% gluten-free cafe</p>
+      <p class="opening-label">Opening in</p>
+      <p class="location">Greater Noida, India</p>
+    </section>
+
+    <p class="bottomline">
+      <span>Certified gluten-free</span><b class="dot" aria-hidden="true">•</b>
+      <span>Celiac safe kitchen</span><b class="dot" aria-hidden="true">•</b>
+      <span>celicasa.cafe</span>
+    </p>
+  </main>
+</body>
+</html>
